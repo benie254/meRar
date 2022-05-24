@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    url('')
+    url('^today/$',views.gallery_today,name='galleryToday')
 ]
