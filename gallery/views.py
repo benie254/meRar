@@ -12,7 +12,7 @@ def gallery_today(request):
     """
     date = dt.date.today()
 
-    return render(request,'galleries/today-galleries.html',{"date":date})
+    return render(request,'galleries/gallery-today.html',{"date":date})
 
 
 def past_days_gallery(request,past_date):
