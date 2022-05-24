@@ -12,27 +12,9 @@ def gallery_today(request):
     """
     date = dt.date.today()
 
-    day = convert_dates(date)
-
     html = f"""
 """
     return HttpResponse(html)
-
-
-def convert_dates(dates):
-    """
-    :param dates: date of the week
-    :return: weekday for the date
-    """
-
-    day_number = dt.date.weekday(dates)
-
-    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
-
-    # return the actual day of the week
-    day = days[day_number]
-
-    return day
 
 
 def past_days_gallery(request,past_date):
@@ -50,7 +32,6 @@ def past_days_gallery(request,past_date):
         # raise 404 when value error is thrown
         raise Http404()
 
-    day = convert_dates(date)
     html = f"""
 """
 
