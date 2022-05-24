@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
 import datetime as dt
 
 
@@ -42,8 +42,13 @@ def past_days_gallery(request,past_date):
     :return: galleries from a past date
     """
 
-    # convert data from the string url
-    date = dt.datetime.strptime(past_date,'%Y-%m-%d').date()
+    try:
+        # convert data from the string url
+        date = dt.datetime.strptime(past_date, '%Y-%m-%d').date()
+
+    except ValueError:
+        # raise 404 when value error is thrown
+        raise Http404()
 
     day = convert_dates(date)
     html = f"""
