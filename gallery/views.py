@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
 import datetime as dt
 
@@ -29,8 +29,9 @@ def past_days_gallery(request,past_date):
     except ValueError:
         # raise 404 when value error is thrown
         raise Http404()
+        assert False
 
-    html = f"""
-"""
+    if date == dt.date.today():
+        return redirect(gallery_today)
 
-    return HttpResponse(html)
+    return render(request,'galleries/past-gallery.html',{"date":date})
