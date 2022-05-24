@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    {%if title%}
+    <title>
+        meRar - {{title}}
+    </title>
+    {%else%}
+    <title>
+        meRar
+    </title>
+    {%endif%}
+</head>
+
+<body>
+{%block content%}
+
+<h1>
+    Galleries for {{date|date:"l d-F Y"}}
+</h1>
+
+{%endblock%}
+</body>
+</html>
