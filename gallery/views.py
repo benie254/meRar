@@ -11,6 +11,9 @@ def gallery_today(request):
     :return: images for a particular day
     """
     date = dt.date.today()
+
+    day = convert_dates(date)
+
     html = f"""
 """
     return HttpResponse(html)
