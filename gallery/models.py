@@ -24,6 +24,6 @@ class tags(models.Model):
 class Image(models.Model):
     title = models.CharField(max_length=60)
     description = models.TextField()
-    editor = models.ForeignKey(Editor)
+    editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
     tags = models.ManyToManyField(tags)
     published = models.DateTimeField(auto_now_add=True)
