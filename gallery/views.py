@@ -43,7 +43,7 @@ def past_days_gallery(request,past_date):
 
 def search_results(request):
 
-    if 'image' in request.GET and request.get["image"]:
+    if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
         searched_images = Image.search_by_tag(search_term)
 
