@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
 import datetime as dt
+from .models import Image
 
 
 # Create your views here.
@@ -11,8 +12,9 @@ def gallery_today(request):
     :return: images for a particular day
     """
     date = dt.date.today()
+    gallery = Image.todays_gallery()
 
-    return render(request,'galleries/gallery-today.html',{"date":date})
+    return render(request,'galleries/gallery-today.html',{"date":date,"gallery":gallery})
 
 
 def past_days_gallery(request,past_date):
@@ -34,4 +36,22 @@ def past_days_gallery(request,past_date):
     if date == dt.date.today():
         return redirect(gallery_today)
 
-    return render(request,'galleries/past-gallery.html',{"date":date})
+    gallery = Image.days_gallery(date)
+
+    return render(request,'galleries/past-gallery.html',{"date":date,"gallery":gallery})
+
+
+def search_results(request):
+
+    if 'image' in request.GET and request.get["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_tag(search_term)
+
+        message = f"{search_term}"
+
+        return render(request,'galleries/search.html',{"message":message,"images":searched_images})
+
+    else:
+        message = "You haven't searched for a tag yet"
+
+        return render(request,'galleries/search.html',{"message":message})
