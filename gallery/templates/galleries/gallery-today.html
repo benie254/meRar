@@ -6,8 +6,6 @@
 
 <div class="container">
 
-
-    <div class="row">
         {%for image in gallery%}
         <div class="col-xs-4 col-sm-4 col-md-4 col-md-4">
             <h2 class="text-center">
@@ -15,7 +13,6 @@
             </h2>
             <img src="{{image.pic.url}}" class="rounded img-responsive" alt="..." width="50%">
         </div>
-    </div>
     {%empty%}
     <div class="row">
         <h2 class="text-center">
