@@ -27,6 +27,7 @@ class tags(models.Model):
 
 
 class Image(models.Model):
+    pic = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=60)
     description = models.TextField()
     editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
