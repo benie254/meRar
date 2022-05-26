@@ -19,7 +19,7 @@ class Editor(models.Model):
         ordering = ['first_name']
 
 
-class tags(models.Model):
+class tag(models.Model):
     name = models.CharField(max_length=30)
 
     def __str__(self):
@@ -31,7 +31,7 @@ class Image(models.Model):
     title = models.CharField(max_length=60)
     description = models.TextField()
     editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
-    tags = models.ManyToManyField(tags)
+    tags = models.ManyToManyField(tag)
     published = models.DateTimeField(auto_now_add=True)
 
     @classmethod
