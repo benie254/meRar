@@ -48,7 +48,7 @@ class Image(models.Model):
         return gallery
 
     @classmethod
-    def search_by_tag(cls,search_term):
-        gallery = cls.objects.filter(tags__icontains=search_term)
+    def search_by_description(cls,search_term):
+        gallery = cls.objects.filter(description__icontains=search_term)
 
         return gallery
