@@ -37,7 +37,7 @@ class Image(models.Model):
     @classmethod
     def todays_gallery(cls):
         today = dt.date.today()
-        gallery = cls.objects.filter(pub_date__date=today)
+        gallery = cls.objects.filter(published__date=today)
 
         return gallery
 
