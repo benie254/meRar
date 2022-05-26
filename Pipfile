@@ -8,6 +8,7 @@ django = "*"
 django-heroku = "*"
 dj-database-url = "*"
 decouple = "*"
+python-decouple = "*"
 
 [dev-packages]
 
