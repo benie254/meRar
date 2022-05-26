@@ -45,14 +45,14 @@ def search_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
-        searched_images = Image.search_by_tag(search_term)
+        searched_images = Image.search_by_description(search_term)
 
         message = f"{search_term}"
 
         return render(request,'galleries/search.html',{"message":message,"images":searched_images})
 
     else:
-        message = "You haven't searched for a tag yet"
+        message = "You haven't searched for an image yet"
 
         return render(request,'galleries/search.html',{"message":message})
 
