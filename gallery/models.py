@@ -1,6 +1,7 @@
 from django.db import models
 import datetime as dt
 from location_field.models.plain import PlainLocationField
+from django.contrib.postgres.search import SearchVector
 
 
 # Create your models here.
@@ -18,6 +19,7 @@ class Editor(models.Model):
 
     class Meta:
         ordering = ['first_name']
+
 
 
 class tag(models.Model):
@@ -38,8 +40,8 @@ class Category(models.Model):
 
 
 class Location(models.Model):
-    city = models.CharField(max_length=255)
-    location = PlainLocationField(based_fields=['city'], zoom=7)
+    city = models.CharField(max_length=255,null=True)
+    location = PlainLocationField(based_fields=['city'], zoom=7,null=True)
 
     def __str__(self):
         return self.location
@@ -54,8 +56,9 @@ class Image(models.Model):
     title = models.CharField(max_length=60)
     description = models.TextField()
     editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
-    tags = models.ManyToManyField(tag)
+    tag = models.ManyToManyField(tag)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, null=True)
     published = models.DateTimeField(auto_now_add=True)
 
 
@@ -72,15 +75,31 @@ class Image(models.Model):
 
         return gallery
 
+
     @classmethod
-    def search_by_description(cls,search_term):
-        gallery = cls.objects.filter(description__icontains=search_term)
+    def search_by_tag(cls, tag_term):
+        gallery = cls.objects.filter(tag__name=tag_term)
+
+        return gallery
+
+# class Meta:
+#     ordering = ['first_name']
+#     search_fields = ['category__pic']
+    @classmethod
+    def search_by_category(cls, category_term):
+
+        # gallery = cls.objects.filter(category__search=search_term)
+        # gallery = cls.objects.annotate(search=SearchVector('category','image_description').filter(search=search_term))
+
+        gallery = cls.objects.filter(category__category=category_term)
+        # Find all Articles for any Reporter whose first name is "John".
+        # >> > Article.objects.filter(reporter__first_name='John')
 
         return gallery
 
     @classmethod
-    def search_by_category(cls, search_term):
-        gallery = cls.objects.filter(category__icontains=search_term)
+    def search_by_location(cls, location_term):
+        gallery = cls.objects.filter(location__location=location_term)
 
         return gallery
 

@@ -20,10 +20,21 @@
           <a class="nav-link" href="#">Link</a>
         </li>
       </ul>
-      <form class="d-flex navbar-form" role="search" action="{%url 'search_results'%}">
-        <input class="form-control me-2" type="search" placeholder="Search Image" name="image" aria-label="Search">
+
+      <form class="d-flex navbar-form ui-widget" role="search" action="{%url 'tag_results'%}">
+        <input class="form-control me-2" type="search" placeholder="Search Image by tag" name="image" id="ttags" onkeyup="filterFunction()" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+
+      <form class="d-flex navbar-form ui-widget" role="search" action="{%url 'category_results'%}">
+        <input class="form-control me-2" type="search" placeholder="Search Image by category" name="image" id="ctags" onkeyup="filterFunction()" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <form class="d-flex navbar-form ui-widget" role="search" action="{%url 'location_results'%}">
+        <input class="form-control me-2" type="search" placeholder="Search Image by location" name="image" id="ltags" onkeyup="filterFunction()" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
     </div>
   </div>
 </nav>

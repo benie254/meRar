@@ -73,6 +73,9 @@ INSTALLED_APPS = [
     'bootstrap5',
 
     'location_field.apps.DefaultConfig',
+    'dal',
+    'dal_select2',
+    'columns',
 ]
 
 MIDDLEWARE = [

@@ -3,7 +3,7 @@ from .models import Editor,Image,tag,Category,Location
 
 
 class ImageAdmin(admin.ModelAdmin):
-    filter_horizontal=('tags',)
+    filter_horizontal=('tag',)
 
 
 # Register your models here.

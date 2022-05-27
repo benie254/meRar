@@ -5,6 +5,10 @@ from .models import Image
 
 
 # Create your views here.
+def galleries(request):
+    galleries = Image.objects.all()
+
+    return render(request,'galleries/gallery-today.html',{"galleries":galleries})
 def gallery_today(request):
     """
     gallery view function
@@ -40,14 +44,13 @@ def past_days_gallery(request,past_date):
 
     return render(request,'galleries/past-gallery.html',{"date":date,"gallery":gallery})
 
-
-def search_results(request):
+def tag_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
-        searched_images = Image.search_by_description(search_term)
+        tag_term = request.GET.get("image")
+        searched_images = Image.search_by_tag(tag_term)
 
-        message = f"{search_term}"
+        message = f"{tag_term}"
 
         return render(request,'galleries/search.html',{"message":message,"images":searched_images})
 
@@ -56,6 +59,53 @@ def search_results(request):
 
         return render(request,'galleries/search.html',{"message":message})
 
+
+def category_results(request):
+
+    if 'image' in request.GET and request.GET["image"]:
+        category_term = request.GET.get("image")
+        searched_images = Image.search_by_category(category_term)
+
+        message = f"{category_term}"
+
+        return render(request,'galleries/search.html',{"message":message,"images":searched_images})
+
+    else:
+        message = "You haven't searched for an image yet"
+
+        return render(request,'galleries/search.html',{"message":message})
+
+
+def location_results(request):
+
+    if 'image' in request.GET and request.GET["image"]:
+        location_term = request.GET.get("image")
+        searched_images = Image.search_by_location(location_term)
+
+        message = f"{location_term}"
+
+        return render(request,'galleries/search.html',{"message":message,"images":searched_images})
+
+    else:
+        message = "You haven't searched for an image yet"
+
+        return render(request,'galleries/search.html',{"message":message})
+
+# def search_category(request):
+#
+#     if 'image' in request.GET and request.GET["image"]:
+#         category_term = request.GET.get("image")
+#         searched_images = Image.search_by_category(category_term)
+#
+#         message = f"{category_term}"
+#
+#         return render(request,'galleries/search.html',{"message":message,"images":searched_images})
+#
+#     else:
+#         message = "You haven't searched for an image yet"
+#
+#         return render(request,'galleries/search.html',{"message":message})
+#
 
 
 
