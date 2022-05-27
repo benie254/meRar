@@ -11,8 +11,30 @@
             <h2 class="text-center">
                 {{image.title}}
             </h2>
-            <img src="{{image.pic.url}}" class="rounded img-responsive" alt="..." width="50%">
+            <img src="{{image.pic.url}}" class="rounded img-responsive" alt="..." width="50%" data-toggle="modal" data-target="#modal">
         </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{image.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="{{image.pic.url}}" class="rounded img-responsive" alt="..." width="100%">
+          <h5 class="modal-text">{{image.description}}</h5>
+      </div>
+      <div class="modal-footer">
+          <i>Published:{{image.published}} by {{image.editor}}</i>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     {%empty%}
         <h2 class="text-center">
             No Images Yet
@@ -20,6 +42,8 @@
     {%endfor%}
 
 </div>
+
+
 
 
 {% endblock %}
