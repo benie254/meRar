@@ -43,7 +43,7 @@ class Image(models.Model):
 
     @classmethod
     def days_gallery(cls,date):
-        gallery = cls.objects.filter(pub_date__date=date)
+        gallery = cls.objects.filter(published__date=date)
 
         return gallery
 
