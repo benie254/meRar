@@ -26,12 +26,24 @@ class tag(models.Model):
         return self.name
 
 
+class Category(models.Model):
+    category = models.CharField(max_length=3,choices=[('F','Food'),('Ent','Entertainment')])
+
+    def __str__(self):
+        return self.category
+
+    def save_category(self):
+        self.save()
+
+
+
 class Image(models.Model):
     pic = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=60)
     description = models.TextField()
     editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
     tags = models.ManyToManyField(tag)
+    category = models.ManyToManyField(Category)
     published = models.DateTimeField(auto_now_add=True)
 
 
@@ -54,12 +66,3 @@ class Image(models.Model):
 
         return gallery
 
-
-class Category(models.Model):
-    category = models.CharField(max_length=3,choices=[('F','Food'),('Ent','Entertainment')])
-
-    def __str__(self):
-        return self.category
-
-    def save_category(self):
-        self.save()
