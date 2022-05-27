@@ -43,7 +43,7 @@ class Image(models.Model):
     description = models.TextField()
     editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
     tags = models.ManyToManyField(tag)
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE))
     published = models.DateTimeField(auto_now_add=True)
 
 
