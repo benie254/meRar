@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Editor,Image,tag
+from .models import Editor,Image,tag,Category
 
 
 class ImageAdmin(admin.ModelAdmin):
@@ -10,3 +10,4 @@ class ImageAdmin(admin.ModelAdmin):
 admin.site.register(Editor)
 admin.site.register(Image,ImageAdmin)
 admin.site.register(tag)
+admin.site.register(Category)
