@@ -34,6 +34,7 @@ class Image(models.Model):
     tags = models.ManyToManyField(tag)
     published = models.DateTimeField(auto_now_add=True)
 
+
     @classmethod
     def todays_gallery(cls):
         today = dt.date.today()
@@ -52,3 +53,13 @@ class Image(models.Model):
         gallery = cls.objects.filter(description__icontains=search_term)
 
         return gallery
+
+
+class Category(models.Model):
+    category = models.CharField(max_length=3,choices=[('F','Food'),('Ent','Entertainment')])
+
+    def __str__(self):
+        return self.category
+
+    def save_category(self):
+        self.save()
