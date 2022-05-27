@@ -71,6 +71,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+
+    'location_field.apps.DefaultConfig',
 ]
 
 MIDDLEWARE = [
@@ -178,3 +180,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+
+LOCATION_FIELD = {
+    'map.provider': 'google',
+
+    'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+    'provider.google.api_key': '',
+    'provider.google.api_libraries': '',
+    'provider.google.map.type': 'ROADMAP',
+}
+
+

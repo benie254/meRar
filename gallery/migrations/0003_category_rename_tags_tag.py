@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Category',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('category', models.CharField(choices=[('F', 'Food'), ('Ent', 'Entertainment')], max_length=3)),
+                ('category', models.CharField(choices=[('Food', 'Food'), ('Entertainment', 'Entertainment')], max_length=30)),
             ],
         ),
         migrations.RenameModel(

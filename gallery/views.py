@@ -57,6 +57,8 @@ def search_results(request):
         return render(request,'galleries/search.html',{"message":message})
 
 
+
+
 def image(request,image_id):
     try:
         image = Image.objects.get(id=image_id)
