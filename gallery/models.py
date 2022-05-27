@@ -10,6 +10,7 @@ class Editor(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.EmailField()
     phone = models.CharField(max_length=10,blank=True)
+    profile_pic = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.first_name

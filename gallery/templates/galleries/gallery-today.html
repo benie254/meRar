@@ -14,12 +14,14 @@
                 <h2 class="text-center">
                     {{image.title}}
                     {{image.category}}
-                    {{image.editor}}
+                    fname{{image.editor.first_name}}
+                    {{image.editor.last_name}}
                     location: {{image.location}}
                     {%for tag in image.tag.all%}
                     tags: {{tag.name}}
                     {%endfor%}
                 </h2>
+            <img src="{{image.editor.profile_pic.url}}" width="10%" class="rounded">
             <a href="{% url 'image' image.id %}">
                 <p>Get Url</p>
             </a>
