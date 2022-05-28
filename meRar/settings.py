@@ -77,7 +77,6 @@ INSTALLED_APPS = [
     'dal_select2',
     'columns',
     'static_precompiler',
-    'django_scss',
 ]
 
 STATICFILES_FINDERS = (
@@ -86,19 +85,8 @@ STATICFILES_FINDERS = (
     # other finders..
     'static_precompiler.finders.StaticPrecompilerFinder',
     # other finders..
-    'django_scss.finders.SCSSFinder',
 )
 
-STATIC_PRECOMPILER_COMPILERS = (
-    ('static_precompiler.compilers.SCSS', {
-        "executable": "/usr/bin/sass",
-        "sourcemap_enabled": True,
-        "compass_enabled": True,
-        "load_paths": ["/path"],
-        "precision": 8,
-        "output_style": "compressed",
-    }),
-)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
