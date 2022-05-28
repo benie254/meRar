@@ -56,10 +56,10 @@ class Image(models.Model):
     pic = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=60)
     description = models.TextField()
-    editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
+    editor = models.ForeignKey(Editor,on_delete=models.DO_NOTHING)
     tag = models.ManyToManyField(tag)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    location = models.ForeignKey(Location, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category,on_delete=models.DO_NOTHING)
+    location = models.ForeignKey(Location, on_delete=models.DO_NOTHING, null=True)
     published = models.DateTimeField(auto_now_add=True)
 
     @classmethod
