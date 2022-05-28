@@ -1,34 +1,38 @@
 {%extends 'galleries/base.html'%}
+{%load static%}
 
 {%block content %}
 
+<body style="background-image:url('{%static 'photos/stars-2643089_1920.jpg' %}');background-position:cover;background-size:cover;background-repeat:no-repeat;">
+
+</body>
+
 <div class="container">
 
-    <div class="row">
-        <img src="{{image.pic.url}}" class="img-responsive" alt="image">
+    <div class="container" style="margin-bottom:15%;">
+        <div class="card mb-3" style="margin-top:2.5%;background-color:black;color:white;opacity:0.9;">
+        <img src="{{image.pic.url}}" class="card-img-top img-responsive" alt="..." style="max-width:75%;margin-left:12%;">
+        <div class="card-body">
+            <h5 class="card-title">{{image.title}} <span style="font-size:smaller;float:right;">Category: {{image.category}}</span></h5>
+            <p class="card-text">{{image.description}}</p>
+            <small class="text-muted">Location: {{image.location}}</small>
+            <small class="text-muted" style="float:right;">Posted {{image.published}} by {{image.editor.first_name}}</small>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-info" type="button" onclick="getURL();" >Get Image URL</button>
+        <code style="background-color:white;opacity:0.9;padding:0.2%;">
+            <a id="url">
+            </a>
+        </code>
+        <button type="button" class="btn btn-outline-info" id="urlbtn" onclick="copyToClipboard('#url')"></button>
+    </div>
     </div>
 
-    <div class="row">
-        <p>
-            {{image.description}}
-        </p>
-    </div>
-
-    <div class="row">
-        <p>
-            Posted {{image.published|timesince}} by {{image.editor.first_name}}
-        </p>
-    </div>
-
-            <h3 id="url">
 
 
-            </h3>
-            <button id="urlbtn" onclick="copyToClipboard('#url')">
 
-            </button>
 
-            <button type="button" onclick="getURL();">Get Page URL</button>
 </div>
 
 {%endblock %}

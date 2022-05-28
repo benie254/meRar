@@ -1,10 +1,13 @@
 {%extends 'galleries/base.html'%}
 {%load columns%}
+{%load static%}
 
 {% block content %}
 {{block.super}}
 
+<body style="background-image:url('{%static 'photos/background-3883181_1920.jpg' %}');background-position:center;background-repeat:no-repeat;background-size:cover;">
 
+</body>
 
 
 <div class="container">
@@ -20,7 +23,7 @@
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        {{image.published}} | <img src="{{image.editor.profile_pic.url}}" width="10%" class="rounded">
+                        {{image.published|timesince}} ago | <img src="{{image.editor.profile_pic.url}}" width="10%" class="rounded">
                         {{image.editor}} |
                         <i style="float: right;padding-top:1%;">
                             <a href="{% url 'image' image.id %}">
