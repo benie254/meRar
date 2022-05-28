@@ -6,7 +6,7 @@ from .models import Image
 
 # Create your views here.
 def galleries(request):
-    galleries = Image.objects.all()
+    galleries = Image.galleries()
 
     return render(request,'galleries/gallery-today.html',{"galleries":galleries})
 

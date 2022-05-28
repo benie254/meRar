@@ -62,6 +62,12 @@ class Image(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE, null=True)
     published = models.DateTimeField(auto_now_add=True)
 
+    @classmethod
+    def galleries(cls):
+        gallery = cls.objects.all()
+
+        return gallery
+
 
     @classmethod
     def todays_gallery(cls):
