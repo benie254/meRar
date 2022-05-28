@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+.navbar-brand{
+font-family: 'Rubik Moonrocks';
+font-size:40px;
+}
+
 h1{
 color:orange;
 margin-top:2.5%;
