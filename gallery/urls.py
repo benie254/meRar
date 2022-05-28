@@ -7,7 +7,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls,name='admin'),
-    url(r'^$',views.gallery_today,name='galleryToday'),
+    url(r'^$',views.galleries,name='galleries'),
     url(r'^archives/(\d{4}-\d{2}-\d{2})/$',views.past_days_gallery,name='pastGallery'),
     url(r'^search/tag/',views.tag_results,name='tag_results'),
     url(r'^search/category/',views.category_results,name='category_results'),

@@ -7,7 +7,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{%url 'galleryToday'%}">meRar</a>
+    <a class="navbar-brand" href="{%url 'galleries'%}">meRar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,18 +35,19 @@
 
       </ul>
 
+
       <form class="d-flex navbar-form ui-widget" role="search" action="{%url 'tag_results'%}">
-        <input class="form-control me-2" type="search" placeholder="Search Image by tag" name="image" id="ttags" onkeyup="filterFunction()" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search by tag" name="image" id="ttags" onkeyup="filterFunction()" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit" style="margin-right:15%;">Search</button>
       </form>
 
       <form class="d-flex navbar-form ui-widget" role="search" action="{%url 'category_results'%}">
-        <input class="form-control me-2" type="search" placeholder="Search Image by category" name="image" id="ctags" onkeyup="filterFunction()" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search by category" name="image" id="ctags" onkeyup="filterFunction()" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" style="margin-right:15%;">Search</button>
       </form>
       <form class="d-flex navbar-form ui-widget" role="search" action="{%url 'location_results'%}">
-        <input class="form-control me-2" type="search" placeholder="Search Image by location" name="image" id="ltags" onkeyup="filterFunction()" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search by location" name="image" id="ltags" onkeyup="filterFunction()" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit" style="margin-right:15%;">Search</button>
       </form>
 
     </div>

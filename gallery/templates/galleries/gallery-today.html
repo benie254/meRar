@@ -5,27 +5,30 @@
 {{block.super}}
 
 
+
+
 <div class="container">
 <div class="row">
-    {%for col in gallery|columns:3%}
+    {%for col in galleries|columns:3%}
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             {%for image in col%}
             <div class="card" style="max-width:100%;">
-                <h5 class="card-title">{{image.title}}</h5>
+                <h5 class="card-title">{{image.title}} <small style="font-size:x-small;float:right;padding-top:2.5%;margin-right:2.5%;">{{image.category}}</small></h5>
                 <div class="card-body" style="max-width:100%;">
-                    <img src="{{image.pic.url}}" class="rounded card-img img-responsive modal-target" alt="..." id="Img 1" width="100%">
+                    <img src="{{image.pic.url}}" class="rounded card-img img-responsive modal-target" alt="..." id="Img 1" width="600" height="200">
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        {{image.published}} by {{image.editor}}
-                        <i style="float: right">
+                        {{image.published}} | <img src="{{image.editor.profile_pic.url}}" width="10%" class="rounded">
+                        {{image.editor}} |
+                        <i style="float: right;padding-top:1%;">
                             <a href="{% url 'image' image.id %}">
-                                    Get Url
+                                   Image Details
                             </a>
                         </i>
                     </small>
-                    <img src="{{image.editor.profile_pic.url}}" width="10%" class="rounded">
+
                 </div>
             </div>
 

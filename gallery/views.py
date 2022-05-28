@@ -9,6 +9,8 @@ def galleries(request):
     galleries = Image.objects.all()
 
     return render(request,'galleries/gallery-today.html',{"galleries":galleries})
+
+
 def gallery_today(request):
     """
     gallery view function
