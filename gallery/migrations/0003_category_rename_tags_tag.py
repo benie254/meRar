@@ -17,8 +17,4 @@ class Migration(migrations.Migration):
                 ('category', models.CharField(choices=[('Food', 'Food'), ('Entertainment', 'Entertainment')], max_length=30)),
             ],
         ),
-        migrations.RenameModel(
-            old_name='tags',
-            new_name='tag',
-        ),
     ]

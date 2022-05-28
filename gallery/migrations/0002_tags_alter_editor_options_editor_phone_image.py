@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='tags',
+            name='tag',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=30)),
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 ('description', models.TextField()),
                 ('published', models.DateTimeField(auto_now_add=True)),
                 ('editor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='gallery.editor')),
-                ('tags', models.ManyToManyField(to='gallery.tags')),
+                ('tag', models.ManyToManyField(to='gallery.tag')),
             ],
         ),
     ]
