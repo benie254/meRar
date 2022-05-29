@@ -17,11 +17,11 @@
 <div class="container">
     <div class="row">
     {%for col in galleries|columns:3%}
-        {%for image in col%}
+
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
-
-            <div class="card" style="max-width:100%;">
+            {%for image in col%}
+            <div class="container">
+              <div class="card" style="max-width:100%;">
                 <h5 class="card-title">{{image.title}} <small style="font-size:x-small;float:right;padding-top:2.5%;margin-right:2.5%;">category:{{image.category}}</small></h5>
                 <div class="card-body" style="max-width:100%;">
                     <img src="{{image.pic.url}}" class="rounded card-img img-responsive modal-target" alt="..." id="Img 1" width="600" height="200">
@@ -50,9 +50,12 @@
             <h2 class="text-center">
                 Something great is coming up
             </h2>
+            </div>
+            {%endfor%}
+
 
         </div>
-        {%endfor%}
+
 
     {%endfor%}
     </div>
