@@ -12,15 +12,19 @@ An image gallery app, generated with [Python](https://www.python.org/) version 3
 meRar is a simple website gallery, displaying photos from different categories, posted at different times, and from different locations. Users can click on images to expand their details view; users can also follow a link to get more details about a selected photo. On top of these, is a functionality to copy an image's link and share in across social platforms. 
 The app enables content creators/admins `CRUD` functionalities to Create, Read, Update, and Delete images and their content/details. 
 
-    meRar consumes a gallery api.
 
-## Screenshot
+## Screenshot--Home Page
 
-<img src="" >
+<img src="https://user-images.githubusercontent.com/99865051/170883835-6983266d-4eba-4f25-a19d-e13c8b594741.png" >
 
-## Screenshot #2
+## Screenshot--Modal--Home Page
 
-<img src="">
+<img src="https://user-images.githubusercontent.com/99865051/170883871-f57b62a9-3c54-4ab3-8a86-9219de242fca.png">
+
+## Screenshot--Image Details Page
+
+<img src="https://user-images.githubusercontent.com/99865051/170883932-2b4f09bf-3eb3-4e67-9f64-1d2e7491acce.png">
+
 
 ## Behavior Driven Development--BDD
 
