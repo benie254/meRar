@@ -16,7 +16,12 @@
         <div class="card-body">
             <h5 class="card-title">{{image.title}} <span style="font-size:smaller;float:right;">Category: {{image.category}}</span></h5>
             <p class="card-text">{{image.description}}</p>
-            <small class="text-muted">Location: {{image.location}}</small>
+            <small class="text-muted">Location: {{image.location}} </small>
+            {%for tag in image.tag.all%}
+            <small>
+                tags: {{tag.name}}
+            </small>
+            {%endfor%}
             <small class="text-muted" style="float:right;">Posted {{image.published}} by {{image.editor.first_name}}</small>
         </div>
     </div>
