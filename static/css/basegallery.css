@@ -72,5 +72,24 @@ color:#023047;
 
 
 
-
+@media screen and (max-width: 992px) {
+  #Img {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  #Img {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 720px) {
+  #Img {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #Img {
+    max-width: 100%;
+  }
+}
 
