@@ -74,12 +74,12 @@ color:#023047;
 
 @media screen and (max-width: 992px) {
   #Img {
-    max-width: 100%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 800px) {
   #Img {
-    max-width: 100%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 720px) {
@@ -87,9 +87,9 @@ color:#023047;
     max-width: 100%;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   #Img {
-    max-width: 100%;
+    width: 100%;
   }
 }
 
