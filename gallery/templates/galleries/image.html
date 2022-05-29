@@ -5,25 +5,33 @@
 
 
 <body style="background-image:url('{%static 'photos/stars-2643089_1920.jpg' %}');background-position:cover;background-size:cover;background-repeat:no-repeat;">
-
-</body>
-
-<div class="container">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-.container {
-    padding-bottom: 5%;
-    margin-top: 10%;
-    margin-left: 75%;
-    font-family: 'Luckiest Guy';
-}
+<!--.container {-->
+<!--    padding-bottom: 5%;-->
+<!--    margin-top: 10%;-->
+<!--    margin-left: 75%;-->
+<!--    font-family: 'Luckiest Guy';-->
+<!--}-->
 
-div a {
-    margin-right: 1%;
-}
+<!--div a {-->
+<!--    margin-right: 1%;-->
+<!--}-->
 </style>
+
+
+<script>
+isShow= true;
+
+toggleDisplay(){
+    this.isShow= !this.isShow;
+}
+    </script>
+</body>
+
+<div class="container">
 
     <div class="container" style="margin-bottom:15%;">
         <div class="card mb-3" style="margin-top:2.5%;background-color:black;color:white;opacity:0.9;">
@@ -56,7 +64,7 @@ div a {
                     Social Share
                 </p>
             </div>
-            <div class="social">
+            <div *ngIf="!isShow" class="social">
                 <div class="social-set">
                     <a href="htpps://twitter.com" class="sociali" target="_blank" aria-label="Twitter"> <i class="fa fa-twitter fa-fw" title="Twitter"></i> </a>
                     <a href="htpps://github.com" class="sociali" target="_blank" aria-label="GitHub"> <i class="fa fa-github-square fa-fw" title="GitHub"></i> </a>
@@ -76,13 +84,7 @@ div a {
 
 
 </div>
-<script>
 
-
-toggleDisplay(){
-    this.isShow= !this.isShow;
-}
-    </script>
 </div>
 
 {%endblock %}
