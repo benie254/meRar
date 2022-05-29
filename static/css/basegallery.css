@@ -52,7 +52,7 @@ font-size:25px;
 h3,h4,h5,h6{
 font-family: 'Tapestry';
 }
-p{
+p,.modal-caption{
 font-family: 'Patrick Hand';
 font-size:18px;
 }

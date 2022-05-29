@@ -16,9 +16,9 @@
         <div class="card-body">
             <h5 class="card-title">{{image.title}} <span style="font-size:smaller;float:right;">Category: {{image.category}}</span></h5>
             <p class="card-text">{{image.description}}</p>
-            <small class="text-muted">Location: {{image.location}} </small>
+            <small class="text-muted">Location: {{image.location}} </small> | [ _ /\ _ ] |
             {%for tag in image.tag.all%}
-            <small>
+            <small class="text-muted">
                 tags: {{tag.name}}
             </small>
             {%endfor%}
