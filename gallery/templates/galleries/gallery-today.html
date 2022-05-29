@@ -15,13 +15,13 @@
 
 
 <div class="container">
-<div class="row">
+    <div class="row">
     {%for col in galleries|columns:3%}
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             {%for image in col%}
             <div class="card" style="max-width:100%;">
-                <h5 class="card-title">{{image.title}} <small style="font-size:x-small;float:right;padding-top:2.5%;margin-right:2.5%;">category:</small></h5>
+                <h5 class="card-title">{{image.title}} <small style="font-size:x-small;float:right;padding-top:2.5%;margin-right:2.5%;">category:{{image.category}}</small></h5>
                 <div class="card-body" style="max-width:100%;">
                     <img src="{{image.pic.url}}" class="rounded card-img img-responsive modal-target" alt="..." id="Img 1" width="600" height="200">
                 </div>
@@ -39,23 +39,19 @@
                 </div>
             </div>
 
-            <h2>
 
 <!--                    {%for tag in image.tag.all%}-->
 <!--                    tags: {{tag.name}}-->
 <!--                    {%endfor%}-->
-            </h2>
-
-
-
-            <h6></h6>
 
                <!-- The Modal -->
+                {%for image in col%}
             <div id="modal" class="modal">
                 <span id="modal-close" class="modal-close">&times;</span>
                 <img id="modal-content" class="modal-content">
                 <div id="modal-caption" class="modal-caption">{{image.description}}</div>
             </div>
+                {%endfor%}
             {%empty%}
             <h2 class="text-center">
                 Something great is coming up
@@ -63,17 +59,8 @@
             {%endfor%}
         </div>
 
-
-
-
-
-
-
-
-
-
     {%endfor%}
-</div>
+    </div>
 
 
 
