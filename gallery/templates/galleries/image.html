@@ -5,7 +5,30 @@
 
 
 <body style="background-image:url('{%static 'photos/stars-2643089_1920.jpg' %}');background-position:cover;background-size:cover;background-repeat:no-repeat;">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+.container {
+    padding-bottom: 5%;
+    margin-top: 10%;
+    margin-left: 75%;
+    font-family: 'Luckiest Guy';
+}
+
+div a {
+    margin-right: 1%;
+}
+</style>
+
+
+<script>
+isShow= true;
+
+toggleDisplay(){
+    this.isShow= !this.isShow;
+}
+    </script>
 </body>
 
 <div class="container">
@@ -32,13 +55,35 @@
             </a>
         </code>
         <button type="button" class="btn btn-outline-info" id="urlbtn" onclick="copyToClipboard('#url')" style="font-family: 'Kaushan Script';"></button>
-        {%include 'base_share.html'%}
+        <div class="container">
+            <div>
+                <p class="btn btn-info btn-lg" (click)=toggleDisplay()>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+                        <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                    </svg>
+                    Social Share
+                </p>
+            </div>
+            <div *ngIf="!isShow" class="social">
+                <div class="social-set">
+                    <a href="htpps://twitter.com" class="sociali" target="_blank" aria-label="Twitter"> <i class="fa fa-twitter fa-fw" title="Twitter"></i> </a>
+                    <a href="htpps://github.com" class="sociali" target="_blank" aria-label="GitHub"> <i class="fa fa-github-square fa-fw" title="GitHub"></i> </a>
+            <!-- <a href="htpps://youtube.com" class="sociali" target="_blank" aria-label="YouTube"> <i class="fa fa-youtube fa-fw" title="YouTube"></i> </a> -->
+            <!-- <a href="htpps://medium.com" class="sociali" target="_blank" aria-label="Medium"> <i class="fa fa-medium fa-fw" title="Medium"></i> </a> -->
+                    <a href="htpps://instagram.com" class="sociali" target="_blank" aria-label="Instagram"> <i class="fa fa-instagram fa-fw" title="Instagram"></i> </a>
+                    <a href="htpps://facebook.com" class="sociali" target="_blank" aria-label="Facebook"> <i class="fa fa-facebook-square fa-fw" title="Facebook"></i> </a>
+                    <a href="htpps://flickr.com" class="sociali" target="_blank" aria-label="Flickr"> <i class="fa fa-flickr fa-fw" title="Flickr"></i> </a>
+                    <a href="htpps://linkedin.com" class="sociali" target="_blank" aria-label="LinkedIn"> <i class="fa fa-linkedin fa-fw" title="LinkedIn"></i> </a>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
 
 
 
 
+
+</div>
 
 </div>
 
