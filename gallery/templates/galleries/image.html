@@ -16,7 +16,7 @@
         <div class="card mb-3" style="margin-top:2.5%;background-color:black;color:white;opacity:0.9;">
         <img src="{{image.pic.url}}" class="card-img-top img-responsive" alt="..." style="max-width:75%;margin-left:12%;">
         <div class="card-body">
-            <h5 class="card-title">{{image.title}} <span style="font-size:smaller;float:right;">Category: {{image.category}}</span></h5>
+            <h5 class="card-title">{{image.title}} <span style="font-size:smaller;float:right;color:#219ebc;">Category: {{image.category}}</span></h5>
             <p class="card-text">{{image.description}}</p>
             <small class="text-muted">Location: {{image.location}} </small> |
             {%for tag in image.tag.all%}
