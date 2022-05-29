@@ -24,14 +24,12 @@
               <div class="card" style="max-width:100%;">
                 <h5 class="card-title">{{image.title}} <small style="font-size:x-small;float:right;padding-top:2.5%;margin-right:2.5%;">category:{{image.category}}</small></h5>
                 <div class="card-body" style="max-width:100%;">
-                    <img src="{{image.pic.url}}" class="rounded card-img img-responsive modal-target" alt="..." id="Img 1" width="600" height="200">
-                    {%for image in galleries%}
+                    <img src="{{image.pic.url}}" class="rounded card-img img-responsive modal-target" alt="{{image.description}}" id="Img 1" width="600" height="200">
                     <div id="modal" class="modal">
                         <span id="modal-close" class="modal-close">&times;</span>
                         <img id="modal-content" class="modal-content">
-                        <div id="modal-caption" class="modal-caption">{{image.description}}</div>
+                        <div id="modal-caption" class="modal-caption"></div>
                     </div>
-                    {%endfor%}
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
