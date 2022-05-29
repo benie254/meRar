@@ -25,6 +25,10 @@ The app enables content creators/admins `CRUD` functionalities to Create, Read, 
 
 <img src="https://user-images.githubusercontent.com/99865051/170883932-2b4f09bf-3eb3-4e67-9f64-1d2e7491acce.png">
 
+## Screenshot--Search Results Page
+
+<img src="https://user-images.githubusercontent.com/99865051/170884236-59f691ac-137e-405c-ae62-a1297d83c166.png">
+
 
 ## Behavior Driven Development--BDD
 
