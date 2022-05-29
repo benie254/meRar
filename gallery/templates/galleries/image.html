@@ -18,12 +18,14 @@
         <div class="card-body">
             <h5 class="card-title" style="color:#2a9d8f;">{{image.title}} <span style="font-size:smaller;float:right;color:#2a9d8f;">Category: {{image.category}}</span></h5>
             <p class="card-text">{{image.description}}</p>
-            <small class="text-muted">Location: {{image.location}} </small> | Tags:
-            {%for tag in image.tag.all%}
+            <small class="text-muted" style="color:#023047;">Location: {{image.location}} </small> |
             <small class="text-muted">
-                {{tag.name}}
+                Tags:
+                {%for tag in image.tag.all%}
+                {{tag.name}},
+                {%endfor%}
             </small>
-            {%endfor%}
+
             <small class="text-muted" style="float:right;">Posted {{image.published}} by {{image.editor.first_name}}</small>
         </div>
     </div>
