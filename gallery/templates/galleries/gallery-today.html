@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        {{image.published|timesince}} ago | <img src="{{image.editor.profile_pic.url}}" width="10%" class="rounded">
+                        {{image.published|timesince}} ago <img src="{{image.editor.profile_pic.url}}" width="10%" class="rounded">
                         {{image.editor}}
                         <i style="float: right;padding-top:1%;">
                             <a href="{% url 'image' image.id %}">
