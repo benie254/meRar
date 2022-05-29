@@ -29,6 +29,9 @@ class tag(models.Model):
     def __str__(self):
         return self.name
 
+    def save_tag(self):
+        self.save()
+
 
 class Category(models.Model):
     category = models.CharField(max_length=30,choices=[('Food','Food'),('Entertainment','Entertainment')])
@@ -38,6 +41,12 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
+
+    def delete_category(self):
+        Category.objects.filter(category=self).delete()
+
+    def update_category(self):
+        Category.objects.filter(category=self).update(category=self.category)
 
 
 class Location(models.Model):
@@ -50,6 +59,11 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
+    def delete_location(self):
+        Location.objects.filter(location=self).delete()
+
+    def update_location(self):
+        Location.objects.filter(location=self).update(location=self.location)
 
 
 class Image(models.Model):
@@ -95,12 +109,12 @@ class Image(models.Model):
     @classmethod
     def search_by_category(cls, category_term):
 
+
         # gallery = cls.objects.filter(category__search=search_term)
         # gallery = cls.objects.annotate(search=SearchVector('category','image_description').filter(search=search_term))
 
         gallery = cls.objects.filter(category__category=category_term)
-        # Find all Articles for any Reporter whose first name is "John".
-        # >> > Article.objects.filter(reporter__first_name='John')
+
 
         return gallery
 
@@ -110,3 +124,17 @@ class Image(models.Model):
 
         return gallery
 
+    @classmethod
+    def get_by_id(cls, id):
+        gallery = cls.objects.filter(id=id)
+
+        return gallery
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        Image.objects.filter(id=self).delete()
+
+    def update_image(self):
+        updated_image = Image.objects.filter(pic=self.id).update(pic=self.pic,title=self.title,description=self.description,editor=self.editor,category=self.category,location=self.location)

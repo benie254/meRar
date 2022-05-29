@@ -70,26 +70,3 @@ margin-top:1.5%;
 color:#023047;
 }
 
-
-
-@media screen and (max-width: 992px) {
-  #Img {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 800px) {
-  #Img {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 720px) {
-  #Img {
-    max-width: 100%;
-  }
-}
-@media screen and (max-width: 600px) {
-  #Img {
-    width: 100%;
-  }
-}
-
