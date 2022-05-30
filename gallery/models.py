@@ -2,6 +2,7 @@ from django.db import models
 import datetime as dt
 from location_field.models.plain import PlainLocationField
 from django.contrib.postgres.search import SearchVector
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
@@ -10,7 +11,7 @@ class Editor(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.EmailField()
     phone = models.CharField(max_length=10,blank=True)
-    profile_pic = models.ImageField(upload_to='images/')
+    profile_pic = CloudinaryField('image')
 
     def __str__(self):
         return self.first_name
@@ -67,7 +68,7 @@ class Location(models.Model):
 
 
 class Image(models.Model):
-    pic = models.ImageField(upload_to='images/')
+    pic = CloudinaryField('image')
     title = models.CharField(max_length=60)
     description = models.TextField()
     editor = models.ForeignKey(Editor,on_delete=models.DO_NOTHING)
