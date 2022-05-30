@@ -219,7 +219,5 @@ cloudinary.config(
     api_key='199658443164478',
     api_secret='BhZ_19ahIy9YPLEnmhXR4Ss8d_Y'
 )
-CLOUD_NAME = config('cloud_name')
-API_KEY = config('api_key')
-API_SECRET = config('api_secret')
+
 
